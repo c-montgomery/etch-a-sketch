@@ -1,7 +1,7 @@
 
 
 html{
-
+    height: 100%;
     background: rgb(2,0,36);
     background: -moz-linear-gradient(106deg, rgba(2,0,36,1) 0%, rgba(79,106,74,1) 46%, rgba(105,122,138,1) 100%);
     background: -webkit-linear-gradient(106deg, rgba(2,0,36,1) 0%, rgba(79,106,74,1) 46%, rgba(105,122,138,1) 100%);
@@ -28,4 +28,13 @@ button{
 .flex{
     display: flex;
     justify-content: center;
+} 
+header {
+  text-align: center;
+  position: relative;
+ 
+}
+button{
+    position: relative;
+    margin: 0px auto 0px auto;
 }
