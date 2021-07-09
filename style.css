@@ -17,10 +17,9 @@ html{
     position: relative;
     right 50%;
     display: grid;
-    width: 100%;
-    gap: 10px;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 0px;
+    border: 1px black solid;
 }
 button{
     display: block;
