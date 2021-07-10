@@ -9,9 +9,10 @@ html{
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#697a8a",GradientType=1);
     
 }
-.body{
+body{
     justify-content: center;
     text-align: center;
+
 }
 .container{
     position: relative;
@@ -29,11 +30,33 @@ button{
     justify-content: center;
 } 
 header {
+  font-size: 115px;
+  color: rgb(160, 149, 102);
+  font-family: 'Fuggles', cursive;
   text-align: center;
   position: relative;
+  justify-content: center;
+  padding-bottom: 20px;
  
 }
 button{
     position: relative;
     margin: 0px auto 0px auto;
+    border-color: rgba(0,0,0,0);
+    border-radius: 2px;
 }
+header div{
+    display:flex;
+    width: 511px;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: rgb(172, 235, 172);
+    border-radius:  5px;
+    border-color: rgba(0,0,0,0);
+}
+
+
