@@ -12,17 +12,17 @@ html{
 body{
     justify-content: center;
     text-align: center;
+    align-items: center;
     
 
 }
 .container{
     position: relative;
     top: 40px;
-    
     display: grid;
     justify-content: center;
-    margin-top: 0px;
-    border: 7px #B68348 solid;
+    align-items: center;
+    border: 7px #66433d solid;
     margin-top: 20px;
     
 }
@@ -47,6 +47,10 @@ header {
   position: relative;
   justify-content: center;
   padding-bottom: 20px;
+  text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000;
+				-1px -1px 0 #000;
  
 }
 button{
@@ -69,13 +73,11 @@ button:hover{
     border-color: rgba(0,0,0,0);
 }
 img{
-    justify-content: center;
-    align-items: center;
     text-align: center;
     position: relative;
     bottom: 560px;
     width: 670px;
-    height: 650;
     background-repeat: no-repeat;
     z-index: -1;
 }
+

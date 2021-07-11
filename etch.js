@@ -42,7 +42,11 @@ let boxWidth = `${(containerHeight/dimension)}px `;
 
 
 function getDimension(){
-    dimension = prompt('how many per side?')
+    dimension = prompt('how many boxes per side?', 'less than 100');
+    console.log(typeof dimension);
+    if (parseInt(dimension) > 100|| isNaN(dimension) === true){
+        prompt('You must enter a value less than 100')
+    }
     random = false;
     darken = false;
     createGrid(dimension)
@@ -70,7 +74,6 @@ function createGrid(dimension = 50){
 
     containerWidth = docHeight/1.9;
     containerHeight = docHeight/1.9;
-
     container.style.width = containerWidth + 'px';
     container.style.height = containerHeight + 'px';
 
