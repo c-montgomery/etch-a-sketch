@@ -17,7 +17,7 @@ body{
 }
 .container{
     position: relative;
- 
+    top: 40px;
     
     display: grid;
     justify-content: center;
@@ -71,10 +71,9 @@ img{
     align-items: center;
     text-align: center;
     position: relative;
-    bottom: 600px;
+    bottom: 560px;
     width: 670px;
     height: 650;
     background-repeat: no-repeat;
     z-index: -1;
 }
-
