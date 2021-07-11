@@ -12,15 +12,19 @@ html{
 body{
     justify-content: center;
     text-align: center;
+    
 
 }
 .container{
     position: relative;
-    right 50%;
+ 
+    
     display: grid;
     justify-content: center;
     margin-top: 0px;
-    border: 1px black solid;
+    border: 7px #B68348 solid;
+    margin-top: 20px;
+    
 }
 button{
     display: block;
@@ -28,6 +32,10 @@ button{
 .flex{
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
+   
+
+    
 } 
 header {
   font-size: 115px;
@@ -58,5 +66,15 @@ button:hover{
     border-radius:  5px;
     border-color: rgba(0,0,0,0);
 }
-
+img{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    bottom: 600px;
+    width: 670px;
+    height: 650;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 

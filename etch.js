@@ -81,7 +81,7 @@ function createGrid(dimension = 50){
     boxHeight = `${(containerHeight/dimension)}px `;
     boxWidth = `${(containerHeight/dimension)}px `;
         
-
+    
     container.style.gridTemplateColumns = boxHeight.repeat(dimension);
     container.style.gridTemplateRows = boxHeight.repeat(dimension);
     container.style.gap = '0px';
