@@ -75,9 +75,10 @@ button:hover{
 img{
     text-align: center;
     position: relative;
-    bottom: 560px;
-    width: 670px;
+    bottom: 526px;
+    width: 610px;
+    height: 605px;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index:-1;
 }
 
