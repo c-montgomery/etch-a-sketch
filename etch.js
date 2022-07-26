@@ -42,7 +42,7 @@ let boxWidth = `${(containerHeight/dimension)}px `;
 
 
 function getDimension(){
-    dimension = prompt('how many boxes per side?', 'less than 100');
+    dimension = prompt('how many boxes per side?', 'Enter a number less than 100');
     console.log(typeof dimension);
     if (parseInt(dimension) > 100|| isNaN(dimension) === true){
         prompt('You must enter a value less than 100')
