@@ -1,7 +1,7 @@
 
 
 html{
-    height: 100%;
+    height: 150%;
     background: rgb(2,0,36);
     background: -moz-linear-gradient(106deg, rgba(2,0,36,1) 0%, rgba(79,106,74,1) 46%, rgba(105,122,138,1) 100%);
     background: -webkit-linear-gradient(106deg, rgba(2,0,36,1) 0%, rgba(79,106,74,1) 46%, rgba(105,122,138,1) 100%);
@@ -18,7 +18,7 @@ body{
 }
 .container{
     position: relative;
-    top: 40px;
+    top: 35px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@ header {
   padding-bottom: 20px;
   text-shadow: -1px 1px 0 #000,
 				  1px 1px 0 #000,
-				 1px -1px 0 #000;
+				 1px -1px 0 #000,
 				-1px -1px 0 #000;
  
 }
@@ -74,10 +74,6 @@ button:hover{
 }
 img{
     text-align: center;
-    /* position: absolute; */
-    /* bottom: 526px;
-    width: 610px;
-    height: 605px; */
     background-repeat: no-repeat;
     z-index:-1;
 }

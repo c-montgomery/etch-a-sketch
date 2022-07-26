@@ -4,9 +4,7 @@ let container = document.querySelector('.container');
 
 let header = document.querySelector('header');
 let headerOptions = document.createElement('div');
-// headerOptions.style.display = 'flex';
 header.appendChild(headerOptions);
-console.log(headerOptions);
 let button = document.createElement('button');
 let optionDarken = document.createElement('button');
 let optionRandom = document.createElement('button');
@@ -14,10 +12,10 @@ let optionRandom = document.createElement('button');
 
 let docHeight = document.documentElement.clientHeight;
 let docWidth = document.documentElement.clientWidth;
-console.log(docHeight +'docheigth');
 
-let containerWidth = docHeight/1.9;
-let containerHeight = docHeight/1.9;
+
+let containerWidth = 550;
+let containerHeight = 550;
 headerOptions.style.width = containerWidth;
 container.style.width = containerWidth + 'px';
 container.style.height = containerHeight + 'px';
@@ -42,11 +40,13 @@ let boxWidth = `${(containerHeight/dimension)}px `;
 
 let frameSize;
 let frame;
+window.onresize = function(){createGrid()};
 
 
 function getDimension(){
+  
     dimension = prompt('how many boxes per side?', 'Enter a number less than 100');
-    console.log(typeof dimension);
+   
     if (parseInt(dimension) > 100|| isNaN(dimension) === true){
         prompt('You must enter a value less than 100')
     }
@@ -69,14 +69,17 @@ function toggleDarken(){
 }
 
 function createGrid(dimension = 50){
+    const pictureFrame = document.querySelector("img");
+    if(pictureFrame){
+    pictureFrame.remove();
+    }
+    console.log("createGrid called");
     
-    console.log(docHeight+ 'docheight in function');
+    
     removeChildren(container);
     docHeight = document.documentElement.clientHeight;
     docWidth = document.documentElement.clientWidth;
 
-    containerWidth = docHeight/1.9;
-    containerHeight = docHeight/1.9;
     container.style.width = containerWidth + 'px';
     container.style.height = containerHeight + 'px';
 
@@ -84,8 +87,8 @@ function createGrid(dimension = 50){
     
     dimensionSquared = dimension**2;
 
-    boxHeight = `${Math.ceil(containerHeight/dimension)}px `;
-    boxWidth = `${Math.ceil(containerHeight/dimension)}px `;
+    boxHeight = `${(containerHeight/dimension)}px `;
+    boxWidth = `${(containerHeight/dimension)}px `;
         
     
     container.style.gridTemplateColumns = boxHeight.repeat(dimension);
@@ -94,9 +97,10 @@ function createGrid(dimension = 50){
     fillGrid(container);
 }
 function fillGrid(container){   
+    console.log("filling grid with boxes ");
     for (let x = 1; x <= dimensionSquared; x++){
         let box = document.createElement('div');
-
+        console.log("in for loop");
         
         
         box.style.height = boxHeight;
@@ -109,30 +113,26 @@ function fillGrid(container){
         box.addEventListener('mouseenter', addColor);
         box.addEventListener('mouseleave', darkenColor);
         container.appendChild(box);
+        console.log("creating a box ");
         
         
     }
+    console.log("end fillgrid funcrtion ")
     //Adjust frame size according to size and position of box grid
     frame = container.getBoundingClientRect();
 
     frameSize = document.createElement("img");
     frameSize.src = "frame2.png";
-    frameWidth = 100+(frame.width);
-    frameHeight = 50+(frame.bottom - frame.top);
+    frameWidth = 140+(frame.width);
+    frameHeight = 140+(frame.bottom - frame.top);
     frameSize.style.position = "absolute";
     frameSize.style.left = (frame.left-50) +"px";
-    frameSize.style.height = (frame.heigh+120) + "px";
-    frameSize.style.width =  (frame.width + 120) + "px";
-    frameSize.style.top = (frame.top-65)+"px";
-    frameSize.style.left = (frame.left-65)+"px";
+    frameSize.style.height = (frame.height+130) + "px";
+    frameSize.style.width =  (frame.width + 132) + "px";
+    frameSize.style.top = (frame.top-74)+"px";
+    frameSize.style.left = (frame.left-72)+"px";
     header.appendChild(frameSize);
-    console.log("is this a row?");
-    console.log("frame.y: " + frame.y);
-    console.log("frame.x: " + frame.x);
-    console.log("frame.top: " + frame.top);
-    console.log("frame.bottom: " + frame.bottom);
-    console.log("frame.right: " + frame.right);
-    console.log("frame.left: " + frame.left);
+    
    
 }
 
