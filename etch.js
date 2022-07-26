@@ -97,7 +97,7 @@ function fillGrid(){
         
         box.style.height = boxHeight;
         box.style.width = boxWidth;
-        box.style.borderRadius = '5%';
+        //box.style.borderRadius = '5%';
     
         box.style.backgroundColor= 'white';
         // box.style.border= '1px solid red'
