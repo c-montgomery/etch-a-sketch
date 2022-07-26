@@ -40,6 +40,8 @@ let dimension = 50;
 let boxHeight = `${(containerHeight/dimension)}px `;
 let boxWidth = `${(containerHeight/dimension)}px `;
 
+let frame;
+
 
 function getDimension(){
     dimension = prompt('how many boxes per side?', 'Enter a number less than 100');
@@ -81,19 +83,20 @@ function createGrid(dimension = 50){
     
     dimensionSquared = dimension**2;
 
-    boxHeight = `${(containerHeight/dimension)}px `;
-    boxWidth = `${(containerHeight/dimension)}px `;
+    boxHeight = `${Math.ceil(containerHeight/dimension)}px `;
+    boxWidth = `${Math.ceil(containerHeight/dimension)}px `;
         
     
     container.style.gridTemplateColumns = boxHeight.repeat(dimension);
     container.style.gridTemplateRows = boxHeight.repeat(dimension);
     container.style.gap = '0px';
     fillGrid();
-
+}
 function fillGrid(){   
     for (let x = 1; x <= dimensionSquared; x++){
         let box = document.createElement('div');
 
+        
         
         box.style.height = boxHeight;
         box.style.width = boxWidth;
@@ -105,9 +108,11 @@ function fillGrid(){
         box.addEventListener('mouseenter', addColor);
         box.addEventListener('mouseleave', darkenColor);
         container.appendChild(box);
+        frame = box.getBoundingClientRect();
+        
     }
 }
-}
+
 
 function addColor(e){
     
