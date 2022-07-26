@@ -58,7 +58,6 @@ function toggleRandom(){
     
     darken = false;
     random = true;
-    console.log(dimension)
     createGrid(dimension);
 }
 
@@ -73,7 +72,6 @@ function createGrid(dimension = 50){
     if(pictureFrame){
     pictureFrame.remove();
     }
-    console.log("createGrid called");
     
     
     removeChildren(container);
@@ -97,10 +95,8 @@ function createGrid(dimension = 50){
     fillGrid(container);
 }
 function fillGrid(container){   
-    console.log("filling grid with boxes ");
     for (let x = 1; x <= dimensionSquared; x++){
         let box = document.createElement('div');
-        console.log("in for loop");
         
         
         box.style.height = boxHeight;
@@ -113,11 +109,9 @@ function fillGrid(container){
         box.addEventListener('mouseenter', addColor);
         box.addEventListener('mouseleave', darkenColor);
         container.appendChild(box);
-        console.log("creating a box ");
         
         
     }
-    console.log("end fillgrid funcrtion ")
     //Adjust frame size according to size and position of box grid
     frame = container.getBoundingClientRect();
 
@@ -151,8 +145,6 @@ function getColor(){
 }
 
 function darkenColor(e){
-    console.log('in darken color function')
-    console.log(random)
     if(random == false && darken == false){
         let div = document.querySelector(`#${e.target.id}`)
         div.style.background = 'rgb(0,0,0)'
@@ -196,7 +188,6 @@ function darkenColor(e){
             break;    
         }
     } else {
-        console.log(getColor())
         let div = document.querySelector(`#${e.target.id}`);
         div.style.backgroundColor = `rgb(${getColor()},${getColor()},${getColor()})`
     }
