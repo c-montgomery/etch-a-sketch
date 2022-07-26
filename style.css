@@ -74,10 +74,10 @@ button:hover{
 }
 img{
     text-align: center;
-    position: relative;
-    bottom: 526px;
+    /* position: absolute; */
+    /* bottom: 526px;
     width: 610px;
-    height: 605px;
+    height: 605px; */
     background-repeat: no-repeat;
     z-index:-1;
 }

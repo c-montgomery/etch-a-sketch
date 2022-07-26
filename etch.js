@@ -40,6 +40,7 @@ let dimension = 50;
 let boxHeight = `${(containerHeight/dimension)}px `;
 let boxWidth = `${(containerHeight/dimension)}px `;
 
+let frameSize;
 let frame;
 
 
@@ -90,9 +91,9 @@ function createGrid(dimension = 50){
     container.style.gridTemplateColumns = boxHeight.repeat(dimension);
     container.style.gridTemplateRows = boxHeight.repeat(dimension);
     container.style.gap = '0px';
-    fillGrid();
+    fillGrid(container);
 }
-function fillGrid(){   
+function fillGrid(container){   
     for (let x = 1; x <= dimensionSquared; x++){
         let box = document.createElement('div');
 
@@ -108,9 +109,31 @@ function fillGrid(){
         box.addEventListener('mouseenter', addColor);
         box.addEventListener('mouseleave', darkenColor);
         container.appendChild(box);
-        frame = box.getBoundingClientRect();
+        
         
     }
+    //Adjust frame size according to size and position of box grid
+    frame = container.getBoundingClientRect();
+
+    frameSize = document.createElement("img");
+    frameSize.src = "frame2.png";
+    frameWidth = 100+(frame.width);
+    frameHeight = 50+(frame.bottom - frame.top);
+    frameSize.style.position = "absolute";
+    frameSize.style.left = (frame.left-50) +"px";
+    frameSize.style.height = (frame.heigh+120) + "px";
+    frameSize.style.width =  (frame.width + 120) + "px";
+    frameSize.style.top = (frame.top-65)+"px";
+    frameSize.style.left = (frame.left-65)+"px";
+    header.appendChild(frameSize);
+    console.log("is this a row?");
+    console.log("frame.y: " + frame.y);
+    console.log("frame.x: " + frame.x);
+    console.log("frame.top: " + frame.top);
+    console.log("frame.bottom: " + frame.bottom);
+    console.log("frame.right: " + frame.right);
+    console.log("frame.left: " + frame.left);
+   
 }
 
 
